@@ -776,9 +776,6 @@ class ReferensiController extends Controller
     
 }
 
-// 
-// , 
-
 // jenis_diklat
 // id, nama
 
