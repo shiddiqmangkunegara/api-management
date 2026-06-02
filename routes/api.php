@@ -114,10 +114,30 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('jenis-tunjangan', [SatuDataController::class, 'get_jenis_tunjangan'])->name('api.referensi.get-jenis-tunjangan');
         // GET jenjang_pendidikan
         Route::get('jenjang-pendidikan', [SatuDataController::class, 'get_jenjang_pendidikan'])->name('api.referensi.get-jenjang-pendidikan');
-        
+        Route::get('configurations', [SatuDataController::class, 'get_configurations'])->name('api.referensi.get-configurations');
     
     // MAHASISWA
         // GET AKM
         Route::get('aktivitas-kuliah-mahasiswa', [SatuDataController::class, 'get_aktivitas_kuliah_mahasiswa'])->name('api.mahasiswa.get_aktivitas_kuliah_mahasiswa');
+        
+
+
+
+    // DOSEN
+        Route::get('aktivitas-mengajar-dosen', [SatuDataController::class, 'get_aktivitas_mengajar_dosen'])->name('api.dosen.get_aktivitas_mengajar_dosen');
+        Route::get('biodata-dosen', [SatuDataController::class, 'get_biodata_dosen'])->name('api.dosen.get_biodata_dosen');
+
+// anggota_penelitian
+// basis_evaluasi
+// bentuk_pendidikan
+// bidang_ilmu_paten
+// bidang_ilmu_publikasi
+// bidang_keilmuan
+// bidang_studi
+// bidang_usaha
+// biodata_dosen
+
     });
+
+
 });
