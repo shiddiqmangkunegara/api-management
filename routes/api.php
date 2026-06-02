@@ -42,6 +42,8 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('agama', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_agama'])->name('api.referensi.get-agama');
         //✅ GET All Prodi
         Route::get('all-prodi', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_all_prodi'])->name('api.referensi.get-all-prodi');
+        //✅ GET akreditasi prodi
+        Route::get('akreditasi-prodi', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_akreditasi_prodi'])->name('api.referensi.get-akreditasi-prodi');
         //✅ GET basis evaluasi
         Route::get('basis-evaluasi', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_basis_evaluasi'])->name('api.referensi.get-basis-evaluasi');
         //✅ GET alat transportasi
@@ -94,19 +96,21 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('jenis-pekerjaan', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_jenis_pekerjaan'])->name('api.referensi.get-jenis-pekerjaan');
         // GET jenis_penghargaan
         Route::get('jenis-penghargaan', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_jenis_penghargaan'])->name('api.referensi.get-jenis-penghargaan');
-        // // GET jenis_prestasi
+        // GET jenis_prestasi
         Route::get('jenis-prestasi', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_jenis_prestasi'])->name('api.referensi.get-jenis-prestasi');
-        // // GET jenis_publikasi
+        // GET jenis_publikasi
         Route::get('jenis-publikasi', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_jenis_publikasi'])->name('api.referensi.get-jenis-publikasi');
-        // // GET jenis_sertifikasi
+        // GET jenis_sertifikasi
         Route::get('jenis-sertifikasi', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_jenis_sertifikasi'])->name('api.referensi.get-jenis-sertifikasi');
+        // GET jenis_sms
+        Route::get('jenis-sms', [App\Http\Controllers\Api\Feeder\ReferensiController::class, 'get_jenis_sms'])->name('api.referensi.get-jenis-sms');
     });
 });
 
 
 
 
-// GET jenis_sms
+
 // GET jenis_substansi
 // GET jenis_tes
 // GET jenis_tinggal
