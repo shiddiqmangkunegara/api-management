@@ -132,53 +132,53 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         // GET biodata_dosen
         Route::get('biodata-dosen', [SatuDataController::class, 'get_biodata_dosen'])->name('api.dosen.get-biodata-dosen');
         // GET anggota_penelitian
-        Route::get('anggota-penelitian', [SatuDataController::class, 'get_anggota_penelitian'])->name('api.referensi.get-anggota-penelitian');
+        Route::get('anggota-penelitian', [SatuDataController::class, 'get_anggota_penelitian'])->name('api.dosen.get-anggota-penelitian');
         // GET basis_evaluasi
-        Route::get('basis-evaluasi', [SatuDataController::class, 'get_basis_evaluasi'])->name('api.referensi.get-basis-evaluasi');
+        Route::get('basis-evaluasi', [SatuDataController::class, 'get_basis_evaluasi'])->name('api.dosen.get-basis-evaluasi');
         // GET bentuk_pendidikan
-        Route::get('bentuk-pendidikan', [SatuDataController::class, 'get_bentuk_pendidikan'])->name('api.referensi.get-bentuk-pendidikan');
+        Route::get('bentuk-pendidikan', [SatuDataController::class, 'get_bentuk_pendidikan'])->name('api.dosen.get-bentuk-pendidikan');
         // GET bidang_ilmu_paten
-        Route::get('bidang-ilmu-paten', [SatuDataController::class, 'get_bidang_ilmu_paten'])->name('api.referensi.get-bidang-ilmu-paten');
+        Route::get('bidang-ilmu-paten', [SatuDataController::class, 'get_bidang_ilmu_paten'])->name('api.dosen.get-bidang-ilmu-paten');
         // GET bidang_ilmu_publikasi
-        Route::get('bidang-ilmu-publikasi', [SatuDataController::class, 'get_bidang_ilmu_publikasi'])->name('api.referensi.get-bidang-ilmu-publikasi');
+        Route::get('bidang-ilmu-publikasi', [SatuDataController::class, 'get_bidang_ilmu_publikasi'])->name('api.dosen.get-bidang-ilmu-publikasi');
         // GET bidang_keilmuan
-        Route::get('bidang-keilmuan', [SatuDataController::class, 'get_bidang_keilmuan'])->name('api.referensi.get-bidang-keilmuan');
+        Route::get('bidang-keilmuan', [SatuDataController::class, 'get_bidang_keilmuan'])->name('api.dosen.get-bidang-keilmuan');
         // GET detail_ajuan_sertifikasi_dosen
-        Route::get('detail-ajuan-sertifikasi-dosen', [SatuDataController::class, 'get_detail_ajuan_sertifikasi_dosen'])->name('api.referensi.get-detail-ajuan-sertifikasi-dosen');
+        Route::get('detail-ajuan-sertifikasi-dosen', [SatuDataController::class, 'get_detail_ajuan_sertifikasi_dosen'])->name('api.dosen.get-detail-ajuan-sertifikasi-dosen');
         // GET detail_paten
-        Route::get('detail-paten', [SatuDataController::class, 'get_detail_paten'])->name('api.referensi.get-detail-paten');
+        Route::get('detail-paten', [SatuDataController::class, 'get_detail_paten'])->name('api.dosen.get-detail-paten');
         // GET detail_pendidikan_formal
-        Route::get('detail-pendidikan-formal', [SatuDataController::class, 'get_detail_pendidikan_formal'])->name('api.referensi.get-detail-pendidikan-formal');
+        Route::get('detail-pendidikan-formal', [SatuDataController::class, 'get_detail_pendidikan_formal'])->name('api.dosen.get-detail-pendidikan-formal');
         // GET detail_penelitian
-        Route::get('detail_penelitian', [SatuDataController::class, 'get_detail_penelitian'])->name('api.referensi.get-detail-penelitian');
+        Route::get('detail_penelitian', [SatuDataController::class, 'get_detail_penelitian'])->name('api.dosen.get-detail-penelitian');
         // GET detail_penugasan_dosen
-        Route::get('detail_penugasan_dosen', [SatuDataController::class, 'get_detail_penugasan_dosen'])->name('api.referensi.get-detail-penugasan-dosen');
+        Route::get('detail_penugasan_dosen', [SatuDataController::class, 'get_detail_penugasan_dosen'])->name('api.dosen.get-detail-penugasan-dosen');
         // GET dokumen
-        Route::get('dokumen', [SatuDataController::class, 'get_detail_ajuan_sertifikasi_dosen'])->name('api.referensi.get-dokumen');
+        Route::get('dokumen', [SatuDataController::class, 'get_detail_ajuan_sertifikasi_dosen'])->name('api.dosen.get-dokumen');
         // GET dokumen_paten
-        Route::get('dokumen-paten', [SatuDataController::class, 'get_detail_paten'])->name('api.referensi.get-dokumen-paten');
+        Route::get('dokumen-paten', [SatuDataController::class, 'get_detail_paten'])->name('api.dosen.get-dokumen-paten');
         // GET dokumen_pendidikan_formal
-        Route::get('dokumen-pendidikan-formal', [SatuDataController::class, 'get_detail_pendidikan_formal'])->name('api.referensi.get-dokumen-pendidikan-formal');
+        Route::get('dokumen-pendidikan-formal', [SatuDataController::class, 'get_detail_pendidikan_formal'])->name('api.dosen.get-dokumen-pendidikan-formal');
         // GET dokumen_penelitian
-        Route::get('dokumen-penelitian', [SatuDataController::class, 'get_detail_penelitian'])->name('api.referensi.get-dokumen-penelitian');
+        Route::get('dokumen-penelitian', [SatuDataController::class, 'get_detail_penelitian'])->name('api.dosen.get-dokumen-penelitian');
         // GET dokumen_publikasi
-        Route::get('dokumen-publikasi', [SatuDataController::class, 'get_detail_publikasi'])->name('api.referensi.get-dokumen-publikasi');
+        Route::get('dokumen-publikasi', [SatuDataController::class, 'get_detail_publikasi'])->name('api.dosen.get-dokumen-publikasi');
         // GET dosen_pembimbing
-        Route::get('dosen-pembimbing', [SatuDataController::class, 'get_dosen_pembimbing'])->name('api.referensi.get-dosen-pembimbing');
+        Route::get('dosen-pembimbing', [SatuDataController::class, 'get_dosen_pembimbing'])->name('api.dosen.get-dosen-pembimbing');
         // GET dosen_pengajar_kelas_kuliah
-        Route::get('dosen-pengajar-kelas-kuliah', [SatuDataController::class, 'get_dosen_pengajar_kelas_kuliah'])->name('api.referensi.get-dosen-pengajar-kelas-kuliah');
+        Route::get('dosen-pengajar-kelas-kuliah', [SatuDataController::class, 'get_dosen_pengajar_kelas_kuliah'])->name('api.dosen.get-dosen-pengajar-kelas-kuliah');
 
 
 
     //PERKULIAHAN
         // GET detail_kelas_kuliah
-        Route::get('detail-kelas-kuliah', [SatuDataController::class, 'get_detail_kelas_kuliah'])->name('api.referensi.get-detail-kelas-kuliah');
+        Route::get('detail-kelas-kuliah', [SatuDataController::class, 'get_detail_kelas_kuliah'])->name('api.perkuliahan.get-detail-kelas-kuliah');
         // GET detail_kurikulum
-        Route::get('detail-kurikulum', [SatuDataController::class, 'get_detail_kurikulum'])->name('api.referensi.get-detail-kurikulum');
+        Route::get('detail-kurikulum', [SatuDataController::class, 'get_detail_kurikulum'])->name('api.perkuliahan.get-detail-kurikulum');
         // GET detail_mata_kuliah
-        Route::get('detail-mata-kuliah', [SatuDataController::class, 'get_detail_mata_kuliah'])->name('api.referensi.get-detail-mata-kuliah');
+        Route::get('detail-mata-kuliah', [SatuDataController::class, 'get_detail_mata_kuliah'])->name('api.perkuliahan.get-detail-mata-kuliah');
         // GET detail_nilai_perkuliahan
-        Route::get('detail-nilai-perkuliahan', [SatuDataController::class, 'get_detail_nilai_perkuliahan'])->name('api.referensi.get-detail-nilai-perkuliahan');
+        Route::get('detail-nilai-perkuliahan', [SatuDataController::class, 'get_detail_nilai_perkuliahan'])->name('api.perkuliahan.get-detail-nilai-perkuliahan');
     });
 
 
