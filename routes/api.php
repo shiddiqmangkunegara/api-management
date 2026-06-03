@@ -224,7 +224,7 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('lembaga-pengangkat', [SatuDataController::class, 'get_lembaga_pengangkat'])->name('api.referensi.lembaga-pengangkat');
         Route::get('level-wilayah', [SatuDataController::class, 'get_level_wilayah'])->name('api.referensi.level-wilayah');
         Route::get('list-aktivitas-mahasiswa', [SatuDataController::class, 'get_list_aktivitas_mahasiswa'])->name('api.referensi.list-aktivitas-mahasiswa');
-        Route::get('list-aktivitas-mahasiswa-copy', [SatuDataController::class, 'get_list_aktivitas_mahasiswa_copy'])->name('api.referensi.list-aktivitas-mahasiswa-copy');
+        
         Route::get('list-anggota-aktivitas-mahasiswa', [SatuDataController::class, 'get_list_anggota_aktivitas_mahasiswa'])->name('api.referensi.list-anggota-aktivitas-mahasiswa');
         Route::get('list-bimbing-mahasiswa', [SatuDataController::class, 'get_list_bimbing_mahasiswa'])->name('api.referensi.list-bimbing-mahasiswa');
         Route::get('list-dosen', [SatuDataController::class, 'get_list_dosen'])->name('api.referensi.list-dosen');
@@ -243,7 +243,7 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('list-skala-nilai-prodi', [SatuDataController::class, 'get_list_skala_nilai_prodi'])->name('api.referensi.list-skala-nilai-prodi');
         Route::get('list-substansi-kuliah', [SatuDataController::class, 'get_list_substansi_kuliah'])->name('api.referensi.list-substansi-kuliah');
         Route::get('list-uji-mahasiswa', [SatuDataController::class, 'get_list_uji_mahasiswa'])->name('api.referensi.list-uji-mahasiswa');
-        Route::get('loop-inserts', [SatuDataController::class, 'get_loop_inserts'])->name('api.referensi.loop-inserts');
+        
         Route::get('lppm-penelitian-dosen', [SatuDataController::class, 'get_lppm_penelitian_dosen'])->name('api.referensi.lppm-penelitian-dosen');
         Route::get('lppm-penelitian-scopus-dosens', [SatuDataController::class, 'get_lppm_penelitian_scopus_dosens'])->name('api.referensi.lppm-penelitian-scopus-dosens');
         Route::get('mahasiswa-lulus-do', [SatuDataController::class, 'get_mahasiswa_lulus_do'])->name('api.referensi.mahasiswa-lulus-do');
