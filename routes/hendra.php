@@ -48,6 +48,27 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('sister-list-tunjangan', [SatuDataController::class, 'get_sister_list_tunjangan'])->name('api.dosen.get_sister_list_tunjangan');
         Route::get('sister-list-visiting-scientist', [SatuDataController::class, 'get_sister_list_visiting_scientist'])->name('api.dosen.get_sister_list_visiting_scientist');
 
+//SISTER
+        Route::get('sister-media-publikasi', [SatuDataController::class, 'get_sister_media_publikasi'])->name('api.dosen.get_sister_media_publikasi');
+        Route::get('sister-negara', [SatuDataController::class, 'get_sister_negara'])->name('api.dosen.get_sister_negara');
+        Route::get('sister-perguruan-tinggi', [SatuDataController::class, 'get_sister_perguruan_tinggi'])->name('api.dosen.get_sister_perguruan_tinggi');
+        Route::get('sister-sdm', [SatuDataController::class, 'get_sister_sdm'])->name('api.dosen.get_sister_sdm');
+        Route::get('sister-semester', [SatuDataController::class, 'get_sister_semester'])->name('api.dosen.get_sister_semester');
+        Route::get('sister-status-kepegawaian', [SatuDataController::class, 'get_sister_status_kepegawaian'])->name('api.dosen.get_sister_status_kepegawaian');
+        Route::get('sister-sumber-gaji', [SatuDataController::class, 'get_sister_sumber_gaji'])->name('api.dosen.get_sister_sumber_gaji');
+        Route::get('sister-tingkat-penghargaan', [SatuDataController::class, 'get_sister_tingkat_penghargaan'])->name('api.dosen.get_sister_tingkat_penghargaan');
+        Route::get('sister-wilayah', [SatuDataController::class, 'get_sister_wilayah'])->name('api.dosen.get_sister_wilayah');
+        Route::get('status-keaktifan-pegawai', [SatuDataController::class, 'get_status_keaktifan_pegawai'])->name('api.dosen.get_status_keaktifan_pegawai');
+        Route::get('status-kepegawaian', [SatuDataController::class, 'get_status_kepegawaian'])->name('api.dosen.get_status_kepegawaian');
+        Route::get('status-mahasiswa', [SatuDataController::class, 'get_status_mahasiswa'])->name('api.dosen.get_status_mahasiswa');
+        Route::get('sumber-gaji', [SatuDataController::class, 'get_sumber_gaji'])->name('api.dosen.get_sumber_gaji');
+        Route::get('tahun-ajaran', [SatuDataController::class, 'get_tahun_ajaran'])->name('api.dosen.get_tahun_ajaran');
+        Route::get('tingkat-penghargaan', [SatuDataController::class, 'get_tingkat_penghargaan'])->name('api.dosen.get_tingkat_penghargaan');
+        Route::get('tingkat-prestasi', [SatuDataController::class, 'get_tingkat_prestasi'])->name('api.dosen.get_tingkat_prestasi');
+        Route::get('transkrip-mahasiswa', [SatuDataController::class, 'get_transkrip_mahasiswa'])->name('api.dosen.get_transkrip_mahasiswa');
+        Route::get('unit-kerja', [SatuDataController::class, 'get_unit_kerja'])->name('api.dosen.get_unit_kerja');
+        Route::get('wilayah', [SatuDataController::class, 'get_wilayah'])->name('api.dosen.get_wilayah');
+
     });
 
 });
