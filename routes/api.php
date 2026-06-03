@@ -135,6 +135,10 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
 // bidang_keilmuan
 // bidang_studi
 // bidang_usaha
+// biodata_dosen
+    
+
     });
+
 
 });
