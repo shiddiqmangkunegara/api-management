@@ -263,7 +263,7 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('penulis-publikasi', [SatuDataController::class, 'get_penulis_publikasi'])->name('api.referensi.penulis-publikasi');
         Route::get('perguruan-tinggi', [SatuDataController::class, 'get_perguruan_tinggi'])->name('api.referensi.perguruan-tinggi');
         Route::get('periode-lampau', [SatuDataController::class, 'get_periode_lampau'])->name('api.referensi.periode-lampau');
-        Route::get('products', [SatuDataController::class, 'get_products'])->name('api.referensi.products');
+        
         Route::get('profil-pt', [SatuDataController::class, 'get_profil_pt'])->name('api.referensi.profil-pt');
         Route::get('program-studi', [SatuDataController::class, 'get_program_studi'])->name('api.referensi.program-studi');
         Route::get('reg-daerah', [SatuDataController::class, 'get_reg_daerah'])->name('api.referensi.reg-daerah');
