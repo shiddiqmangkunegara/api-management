@@ -288,6 +288,8 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('simak-transkrips', [SatuDataController::class, 'get_simak_transkrips'])->name('api.referensi.simak-transkrips');
         Route::get('simak-tugas-akhir', [SatuDataController::class, 'get_simak_tugas_akhir'])->name('api.referensi.simak-tugas-akhir');
         Route::get('simak-yudisium', [SatuDataController::class, 'get_simak_yudisium'])->name('api.referensi.simak-yudisium');
+        
+        
         Route::get('sister-agama', [SatuDataController::class, 'get_sister_agama'])->name('api.referensi.sister-agama');
         Route::get('sister-bidang-studi', [SatuDataController::class, 'get_sister_bidang_studi'])->name('api.referensi.sister-bidang-studi');
         Route::get('sister-bidang-usaha', [SatuDataController::class, 'get_sister_bidang_usaha'])->name('api.referensi.sister-bidang-usaha');
