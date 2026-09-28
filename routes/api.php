@@ -10,6 +10,9 @@ Route::post('get-token', [AuthController::class, 'getToken']);
 
 Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
     Route::prefix('v1')->group(function () {
+        Route::get('/import-tagihan', [App\Http\Controllers\Api\DatabaseKoneksiController::class, 'getImportTagihan']);
+        Route::get('/import-pembayaran', [App\Http\Controllers\Api\DatabaseKoneksiController::class, 'getImportPembayaran']);
+
         Route::get('mahasiswa-by-nim', [App\Http\Controllers\Api\MahasiswaController::class, 'index'])->name('api.mahasiswa-by-nim');
         
         // ✅ GET semua mahasiswa
