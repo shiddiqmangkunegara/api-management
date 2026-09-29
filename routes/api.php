@@ -376,8 +376,8 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('wilayah', [SatuDataController::class, 'get_wilayah'])->name('api.referensi.wilayah');
 
         //SIM LPPM
-        Route::get('/desa-binaan',[LppmController::class, 'api.desa_binaan']);
-        Route::get('/penelitian-dosen',[LppmController::class, 'api.penelitian_dosen']);
-        Route::get('/pengabdian-dosen',[LppmController::class, 'api.pengabdian_dosen']);
+        Route::get('/desa-binaan',[LppmController::class, 'desa_binaan']);
+        Route::get('/penelitian-dosen',[LppmController::class, 'penelitian_dosen']);
+        Route::get('/pengabdian-dosen',[LppmController::class, 'pengabdian_dosen']);
     });
 });
