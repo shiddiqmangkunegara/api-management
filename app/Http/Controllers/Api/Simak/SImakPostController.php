@@ -20,10 +20,10 @@ class SimakPostController extends Controller
      */
     public function store_prestasi(Request $request)
     {
-        // 1. Validasi Input sesuai dengan struktur tabel simak_prestasi_mahasiswas
+        // 1. Validasi Input sesuai dengan fleksibilitas payload SIMAK & SIMKATMAWA
         $validator = Validator::make($request->all(), [
             'id_prestasi'          => 'required|string',
-            'nim'                  => 'required|string|max:14',
+            'nim'                  => 'required|string|max:20',
             'nama_mahasiswa'       => 'required|string',
             'nama_prestasi'        => 'required|string',
             'jenis_prestasi'       => 'nullable|string',
@@ -36,15 +36,15 @@ class SimakPostController extends Controller
             'file_sk_tugas'        => 'nullable|string',
             'status_approval'      => 'nullable|string',
             'jumlah_unit_peserta'  => 'nullable|string|max:10',
-            'kelompok_prestasi'    => 'nullable|string|in:INDIVIDU,KELOMPOK',
-            'bentuk'               => 'nullable|string|in:DARING,LURING',
+            'kelompok_prestasi'    => 'nullable|string', // Fleksibel untuk MANDIRI / KELOMPOK / INDIVIDU
+            'bentuk'               => 'nullable|string', // Fleksibel untuk DARING / LURING
             'url_peserta'          => 'nullable|string',
             'url_foto_upp'         => 'nullable|string',
             'url_dokumen_undangan' => 'nullable|string',
             'tgl_sertifikat'       => 'nullable|date_format:Y-m-d',
             'keterangan'           => 'nullable|string',
-            'mahasiswa'            => 'nullable|array', // Menerima array JSON
-            'dosen'                => 'nullable|array', // Menerima array JSON
+            'mahasiswa'            => 'nullable|array',
+            'dosen'                => 'nullable|array',
         ]);
 
         if ($validator->fails()) {
@@ -56,7 +56,7 @@ class SimakPostController extends Controller
         }
 
         try {
-            // 2. Cek apakah id_prestasi sudah pernah dimasukkan (mencegah duplikasi data)
+            // 2. Cek apakah id_prestasi sudah pernah dimasukkan
             $exists = DB::connection($this->connection)
                 ->table('simak_prestasi_mahasiswas')
                 ->where('id_prestasi', $request->id_prestasi)
@@ -85,29 +85,30 @@ class SimakPostController extends Controller
                 'file_sk_tugas'        => $request->file_sk_tugas,
                 'status_approval'      => $request->status_approval ?? 'approved',
                 'jumlah_unit_peserta'  => $request->jumlah_unit_peserta ?? '1',
-                'kelompok_prestasi'    => $request->kelompok_prestasi ?? 'INDIVIDU',
+                'kelompok_prestasi'    => $request->kelompok_prestasi ?? 'MANDIRI',
                 'bentuk'               => $request->bentuk ?? 'DARING',
                 'url_peserta'          => $request->url_peserta,
                 'url_foto_upp'         => $request->url_foto_upp,
                 'url_dokumen_undangan' => $request->url_dokumen_undangan,
                 'tgl_sertifikat'       => $request->tgl_sertifikat,
                 'keterangan'           => $request->keterangan,
-                // Mengubah array menjadi string JSON untuk kolom JSON di MariaDB/MySQL
                 'mahasiswa'            => $request->has('mahasiswa') ? json_encode($request->mahasiswa) : null,
                 'dosen'                => $request->has('dosen') ? json_encode($request->dosen) : null,
                 'created_at'           => now(),
                 'updated_at'           => now(),
             ];
 
-            // 4. Insert data menggunakan koneksi 'pdunsri'
-            $id = DB::connection($this->connection)
+            // 4. Insert data ke tabel PDUnsri
+            DB::connection($this->connection)
                 ->table('simak_prestasi_mahasiswas')
-                ->insertGetId($dataToInsert);
+                ->insert($dataToInsert);
 
             return response()->json([
                 'status'  => 'success',
                 'message' => 'Data prestasi mahasiswa berhasil ditambahkan',
-                'data_id' => $id
+                'data'    => [
+                    'id_prestasi' => $request->id_prestasi
+                ]
             ], 201);
 
         } catch (Exception $e) {
