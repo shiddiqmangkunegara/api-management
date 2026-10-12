@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\Feeder\SatuDataController;
 use App\Http\Controllers\Api\LppmController;
+use App\Http\Controllers\Api\Simak\SimakPostController;
 
 Route::post('get-token', [AuthController::class, 'getToken']);
 
@@ -382,5 +383,13 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         Route::get('/desa-binaan',[LppmController::class, 'desa_binaan']);
         Route::get('/penelitian-dosen',[LppmController::class, 'penelitian_dosen']);
         Route::get('/pengabdian-dosen',[LppmController::class, 'pengabdian_dosen']);
+
+
+
+        Route::prefix('simak')->group(function () {
+            Route::post('/prestasi-mahasiswa',[SimakPostController::class, 'store_prestasi'])->name('api.simak.store-prestasi-mahasiswa');
+        });
     });
+
+    
 });
