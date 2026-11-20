@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\Feeder\SatuDataController;
 use App\Http\Controllers\Api\LppmController;
 use App\Http\Controllers\Api\Simak\SimakPostController;
+use App\Http\Controllers\Api\Feeder\FeederGetController;
 
 Route::post('get-token', [AuthController::class, 'getToken']);
 
@@ -35,6 +36,10 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
             // ✅ GET detail prodi by id_prodi
             Route::get('program-studi/{id_prodi}', [SatuDataController::class, 'informasi_prodi'])
                 ->name('api.feeder.program-studi.detail');
+
+
+            // GET Aktivitas Mahasiswa Luar Prodi
+            Route::get('/aktivitas-mahasiswa-luar-prodi', [FeederGetController::class, 'get_aktivitas_mahasiswa_luar_prodi'])->name('api.mahasiswa.get-aktivitas-mahasiswa-luar-prodi');
 
         });
 
@@ -131,7 +136,6 @@ Route::middleware(['auth:sanctum', 'check.api.access'])->group(function () {
         // Get Biodata mahasiswa
         Route::get('biodata-mahasiswa', [SatuDataController::class, 'get_biodata_mahasiswa'])->name('api.mahasiswa.get-biodata-mahasiswa');
         
-
 
 
     // DOSEN
